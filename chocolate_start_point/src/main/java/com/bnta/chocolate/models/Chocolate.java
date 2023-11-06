@@ -26,6 +26,7 @@ public class Chocolate {
         this.name = name;
         this.cocoaPercentage = cocoaPercentage;
         this.estate = estate;
+
     }
 
     public Chocolate() {
