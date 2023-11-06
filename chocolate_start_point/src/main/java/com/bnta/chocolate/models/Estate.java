@@ -1,26 +1,31 @@
 package com.bnta.chocolate.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 
-
+@Entity
+@Table(name = "estates")
 public class Estate {
 
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
+    @Column
     private String name;
 
-
+    @Column
     private String country;
 
-
+    @OneToMany(mappedBy = "estate")
+    @JsonIgnoreProperties({"estate"})
     private List<Chocolate> chocolates;
+
 
     public Estate(String name, String country) {
         this.name = name;
