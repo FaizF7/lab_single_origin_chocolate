@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfigurationPackage;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -20,6 +21,10 @@ public class ChocolateService {
 
     public Optional<Chocolate> getChocolateById(long id){
         return chocolateRepository.findById(id);
+    }
+
+    public List<Chocolate> getAllChocolates(){
+        return chocolateRepository.findAll();
     }
 
 }
