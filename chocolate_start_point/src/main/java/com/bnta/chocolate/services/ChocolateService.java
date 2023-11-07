@@ -21,10 +21,17 @@ public class ChocolateService {
 
     public Optional<Chocolate> getChocolateById(long id){
         return chocolateRepository.findById(id);
+
     }
 
     public List<Chocolate> getAllChocolates(){
         return chocolateRepository.findAll();
     }
+
+    public List<Chocolate> getAllChocolatesAbove60Percent(int cocoaPercentage){
+        return chocolateRepository.findByCocoaPercentageGreaterThan(cocoaPercentage);
+    }
+
+
 
 }
